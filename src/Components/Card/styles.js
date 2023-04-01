@@ -1,21 +1,24 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
-  padding: 16px;
-  width: 440px;
-  height: 210px;
-  /* background-color: ${(props) => props.cor}; */
-  background: #729F92;
+  padding: 15px;
+  min-width: 400px;
+  max-width: 440px;
+  min-height: 210px; 
+  background-color: ${(props) => props.color};
   border-radius: 12px;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction:column;
   position: relative;
-  margin: 50px;
+  margin: 12px;
+  /* gap: 3px; */
   color: #ffffff;
 `;
 
 export const IdPokemon = styled.p`
 
-position: absolute;
+
 width: 30px;
 height: 19px;
 left: 23px;
@@ -31,35 +34,36 @@ color: #FFFFFF;
 
 export const NomedoPokemon = styled.h1`
 
-position: absolute;
-width: 159px;
+
 height: 39px;
-left: 23px;
-top: 40px;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 700;
 font-size: 32px;
 line-height: 39px;
-
-
-
 color: #FFFFFF;
+transform: translateY(-7px);
+::first-letter {
+  text-transform: uppercase;}
 `;
 
 export const TipoPokemon = styled.img`
-  max-width: 100px;
+  min-width: 100px;
   height: 32px;
   border-radius: 8px;
   overflow: hidden;
   border: 1px dashed #ffffff;
   margin-right: 8px;
-
+  
 `;
+
+
 
 export const TiposContainer = styled.div`
-  margin-bottom: 52px;
-`;
+  display: flex;
+  gap: 1rem;
+`
+
 export const Pokebola = styled.img`
   position: absolute;
   top: 0;
@@ -86,12 +90,11 @@ export const CatchButton = styled.button`
 `;
 
 export const Pokemon = styled.img`
-position: absolute;
-width: 193px;
-height: 193px;
-left: 274px;
-top: 294px;
+  width: 193px;
+  height: 193px;
+  position: absolute;
+  top: -60px;
+  right: 0;
+  z-index: 2;`
 
-z-index:2;
-`
 

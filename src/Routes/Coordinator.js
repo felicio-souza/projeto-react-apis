@@ -1,3 +1,5 @@
+
+
 export const goToHomePage = (navigate)=>{
     navigate("/")
 }
@@ -9,3 +11,4 @@ export const goToPokedex = (navigate)=>{
 export const goToDetalhes = (navigate, id)=>{
     navigate(`/detalhes/${id}`)
 }
+

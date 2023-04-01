@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { GlobalContext } from "./GlobalContext";
 import {BASE_URL} from "../Serves/url";
-import { CorDoCard} from "../Serves/CorDoCard";
+
 
 const GlobalState = (props)=>{
 
@@ -10,6 +10,7 @@ const GlobalState = (props)=>{
    
     const [pokedex, setPokedex] = useState([])
     const [listaDePokemon, setlistaDePokemon] = useState([])
+    
     
     
    
@@ -53,10 +54,25 @@ const obterPokemons = async () => {
     }
 };
    
+//Função para capiturar os pokemons para pokedex
+
+    const capituraPokemon = (addPokemon)=>{
+        const novaPokedex = [...pokedex
+        ]
+        const temPokemon = novaPokedex.find((pokemonJanaPokedex)=> pokemonJanaPokedex.name === addPokemon.name
+        );
+        if (!temPokemon) {
+            const newPokemon = {...addPokemon}  
+            novaPokedex.push(newPokemon)          ;
+        }
+        setPokedex(novaPokedex)
+    }
 
 
-
-       console.log(listaDePokemon)
+// const capituraPokemon = ()=>{
+//    return console.log("aqui")
+// }
+       
     const context = {
 
         pokedex,
@@ -64,7 +80,8 @@ const obterPokemons = async () => {
         setlistaDePokemon,
         setPokedex,
         obterPokemons,
-        CorDoCard,
+        capituraPokemon,
+       
 
 
     }
